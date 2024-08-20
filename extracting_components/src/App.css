@@ -1,0 +1,29 @@
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+  margin-left: 600px;
+  margin-top:10px;
+}
+
+.btn-login {
+  background-color: #006e00;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background-color: #05da0c;
+}
+
+.btn-logout {
+  background-color: #920f00;
+  color: #fff;
+}
+
+.btn-logout:hover {
+  background-color: #e0321e;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Marks Analysing System</title>
+  <style>
+    body {
+
+      margin: 20px;
+      background-color: #642222;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('https://images.unsplash.com/photo-1462536943532-57a629f6cc60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29sbGVnZSUyMGhkJTIwaW1hZ2VzfGVufDB8fDB8fHww');
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #0c0c0c;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #result {
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <form id="marksForm">
+    <h1>Student Mark</h1>
+    <label for="name">Student Name : </label>
+    <input type="text" id="name" required value="giri">
+
+    <label for="department">Department : </label>
+    <input type="text" id="department" required value="IT">
+
+    <label for="semester">Semester : </label>
+    <input type="number" id="semester" required value="5">
+
+    <label for="section">Section : </label>
+    <input type="text" id="section" required value="A">
+
+    <label for="noofstud">No of students in this section:</label>
+    <input type="text" id="noofstud" required value="63">
+
+    <label for="subject1">Software Engineering Mark:</label>
+    <input type="number" id="subject1" required value="98">
+
+    <label for="subject2">Computer Networks Mark:</label>
+    <input type="number" id="subject2" required value="97">
+
+    <label for="subject3">Machine Learning Mark:</label>
+    <input type="number" id="subject3" required value="96">
+
+    <label for="subject4">Hindi Mark</label>
+    <input type="number" id="subject4" required value="95">
+
+    <label for="subject5">User Interface Design Mark:</label>
+    <input type="number" id="subject5" required value="99">
+
+
+    <button type="button" onclick="calculateMarks()">Calculate Mark</button>
+  </form>
+  <table id="result">
+    <tr>
+    <td>Name: </td>
+    <td>Department: </td>
+    <td>Semester: </td>
+    <td>Section: </td>
+    <td>No of students: </td>
+    <td>Average Marks: </td>
+    <td>Total Marks: </td>
+    <td>Status: </td></tr>
+  </table>
+
+  <script>
+    function calculateMarks() {
+      var name = document.getElementById("name").value;
+      var department = document.getElementById("department").value;
+      var semester = document.getElementById("semester").value;
+      var section = document.getElementById("section").value;
+      var noofstud = document.getElementById("noofstud").value;
+
+      var subject1 = parseFloat(document.getElementById("subject1").value);
+      var subject2 = parseFloat(document.getElementById("subject2").value);
+      var subject3 = parseFloat(document.getElementById("subject3").value);
+      var subject4 = parseFloat(document.getElementById("subject4").value);
+      var subject5 = parseFloat(document.getElementById("subject5").value);
+      
+      var totalMarks = subject1 + subject2 + subject3 + subject4 + subject5;
+      var averageMarks = totalMarks / 5;
+
+      var passStatus = (subject1 >= 50 && subject2 >= 50 && subject3 >= 50 && subject4 >= 50 && subject5 >= 50) ? "Pass" : "Fail";
+
+      var res="";
+      res += "<tr><td>" + name + "</td>";
+
+      res += "<td>" + department + "</td>";
+      res += "<td>" + semester + "</td>";
+      res += "<td>" + section + "</td>";
+      res += "<td>" + noofstud + "</td>";
+      res += "<td>" + averageMarks + "</td>";
+      res += "<td>" + totalMarks + "</td>";
+
+      res += "<td>" + passStatus + "</td></tr>";
+
+      document.getElementById("result").innerHTML += res;
+    }
+  </script>
+
+</body>
+
+</html>

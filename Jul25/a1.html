@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: conic-gradient(#f00,#0f0,#00f);
+        backdrop-filter: blur(100px);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 100vh;;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    input[type=text] {
+        width: 200px;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    #btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background: #ff00aa;
+        color: white;
+        border: none;
+        border-radius: 4px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<body>
+    Name:<input type="text" name="name" id="name">
+    <br />
+    <br />
+    Roll No:<input type="text" name="rollno" id="rollno">
+    <br />
+    <br />
+    <input type="button" value="View" id="btn" onclick="show()">
+    <div id="es">
+        <br />
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>RollNumber</th>
+            </thead>
+            <tbody id="res"></tbody>
+        </table>
+    </div>
+</body>
+<script>
+    class student {
+        constructor(name, rollno) {
+            this.name = name;
+            this.rollno = rollno;
+        }
+        ans() {
+            return `<tr><td>${this.name}</td><td>${this.rollno}</td></tr>`;
+        }
+    }
+    show = () => {
+        let iname = document.getElementById("name").value;
+        let irollno = document.getElementById("rollno").value;
+        var obj = new student(iname, irollno);
+        res.innerHTML += obj.ans();
+    }
+</script>
+
+</html>
