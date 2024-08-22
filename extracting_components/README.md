@@ -1,5 +1,14 @@
 # Extracting Components App in ReactJs
 
+# Screenshots
+Login page
+![Login page](public/eg.png)
+
+---
+
+Logout page
+![Logout page](public/eo.png)
+
 ## How to Run this Code
 
 ### Getting Started with Create React App
