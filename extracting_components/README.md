@@ -1,6 +1,8 @@
 # Extracting Components App in ReactJs
 
-# Screenshots
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Outputs
 Login page
 ![Login page](public/eg.png)
 
@@ -10,10 +12,6 @@ Logout page
 ![Logout page](public/eo.png)
 
 ## How to Run this Code
-
-### Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Available Scripts
 
